@@ -1,6 +1,6 @@
 # Communicable, Maternal, Neonatal, and Nutritional Disease Burden (CMNN)
 
-```{r}
+```{r,echo = FALSE,include = FALSE}
 # Load necessary packages
 pacman::p_load(tidyverse, knitr, here)
 
@@ -9,21 +9,46 @@ data_cmnn <- read_csv(here("data", "burden-of-disease-cmnn.csv"))
 ```
 
 ## Table of Estimates for CMNN Burden Over Time
-
-```{r}
+```{r, echo = FALSE}
 # Here render a table for the DALY burden over time for the three countries 
 # You should pivot the data to show each country in a separate column.
 # Use kable() from the knitr package to render the table.
+
+# Filter for only Switzerland, Canada, and South Africa
+cmnn_countries_dalys <- data_cmnn %>%
+  filter(Entity %in% c("Switzerland", "Canada", "South Africa"))
+
+# Pivot the data so that each country's DALYs are shown in separate columns
+cmnn_pivoted_data <- cmnn_countries_dalys %>%
+  pivot_wider(names_from = Entity,Year, values_from = `DALYs (Disability-Adjusted Life Years) - Communicable, maternal, neonatal, and nutritional diseases - Sex: Both - Age: Age-standardized (Rate)`)
+
+# Generate a table using kable from the knitr package
+kable(cmnn_pivoted_data, format = "html", caption = "DALY Burden Over Time for Switzerland, Canada, and South Africa")
 ```
 
 ## Plot Showing Trends in CMNN Burden Over Time
 
-```{r}
+```{r, echo = FALSE}
 # Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# Convert the wide format back to long format for ggplot
+cmnn_long_data <-cmnn_pivoted_data %>%
+  pivot_longer(cols = c("Switzerland", "Canada", "South Africa"),
+               names_to = "Entity",
+               values_to = "DALYs")
+# Create a line plot with ggplot2
+ggplot(cmnn_long_data, aes(x = Year, y = DALYs, color = Entity)) +
+  geom_line() + 
+  scale_x_continuous(breaks = seq(min(cmnn_long_data$Year), max(cmnn_long_data$Year), by = 5)) +
+  labs(title = "Trend of DALY Burden Over Time",
+       x = "Year",
+       y = "DALYs",
+       color = "Entity") +
+  theme_minimal() +
+  scale_color_manual(values = c("Switzerland" = "blue", "Canada" = "red", "South Africa" = "green"))
+
 ```
 
+
 ## Summary of CMNN Burden Findings
-
-Provide a brief analysis based on the data presented in the table and chart. Highlight any significant findings or patterns. About 3 sentences.
-
+There is a noticeable difference in the trend lines between the countries. For instance, South Africa shows a higher and  more volatile DALY burden over the years compared to Switzerland and Canada, indicating a greater impact of communicable, maternal, neonatal, and nutritional diseases.In 2005 there's a notable spikes in South Africa highlight periods of health crises or gaps in disease control and prevention, in this case HIV/AIDs).
 
