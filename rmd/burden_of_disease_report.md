@@ -1,6 +1,6 @@
 Global Disease Burden Analysis
 ================
-REPLACE WITH THE AUTHOR NAMES
+Amy Mwanga, Tamara, Didier
 
 # Introduction
 
@@ -16,11 +16,6 @@ The source data is from the Institute for Health Metrics and Evaluation
 # Communicable, Maternal, Neonatal, and Nutritional Disease Burden (CMNN)
 
 ## Table of Estimates for CMNN Burden Over Time
-
-    ## Warning: Specifying the `id_cols` argument by position was deprecated in tidyr 1.3.0.
-    ## ℹ Please explicitly name `id_cols`, like `id_cols = Year`.
-    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-    ## generated.
 
 <table>
 <caption>
@@ -484,11 +479,6 @@ prevention, in this case HIV/AIDs).
 
 ## Table of Estimates for NCD Burden Over Time
 
-    ## Warning: Specifying the `id_cols` argument by position was deprecated in tidyr 1.3.0.
-    ## ℹ Please explicitly name `id_cols`, like `id_cols = "Year"`.
-    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-    ## generated.
-
 <table>
 <caption>
 DALYs per Year for Canada, South Africa and Switzerland
@@ -934,12 +924,6 @@ Switzerland
 </table>
 
 ## Plot Showing Trends in NCD Burden Over Time
-
-    ## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-    ## ℹ Please use `linewidth` instead.
-    ## This warning is displayed once every 8 hours.
-    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-    ## generated.
 
 ![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 

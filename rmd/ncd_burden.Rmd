@@ -17,7 +17,7 @@ view(data_ncd)
 # You should pivot the data to show each country in a separate column.
 tableCAN_SA_CH<-data_ncd %>% 
   filter(Entity%in%c("Canada", "South Africa", "Switzerland")) %>% 
-  pivot_wider(names_from="Entity", "Year",
+  pivot_wider(names_from=Entity, id_cols = Year,
               values_from="DALYs (Disability-Adjusted Life Years) - Non-communicable diseases - Sex: Both - Age: Age-standardized (Rate)")
 
   # Use kable() from the knitr package to render the table.
@@ -34,7 +34,7 @@ dataCAN_SA_CH<-tableCAN_SA_CH %>%
 #plotCAN_SA_CA <- 
   ggplot(dataCAN_SA_CH,
         aes(x=Year, y=DALY, color=Country))+
-  geom_line(size=1)+
+  geom_line(linewidth=1)+
     labs(title = "Trend of DALYs per year attributable to non-communicable diseases",
          subtitle ="Time range 1990-2019",
          y="DALYs (Age-standardized)")+

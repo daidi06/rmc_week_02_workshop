@@ -21,7 +21,7 @@ cmnn_countries_dalys <- data_cmnn %>%
 
 # Pivot the data so that each country's DALYs are shown in separate columns
 cmnn_pivoted_data <- cmnn_countries_dalys %>%
-  pivot_wider(names_from = Entity,Year, values_from = `DALYs (Disability-Adjusted Life Years) - Communicable, maternal, neonatal, and nutritional diseases - Sex: Both - Age: Age-standardized (Rate)`)
+  pivot_wider(names_from = Entity,id_cols = Year, values_from = `DALYs (Disability-Adjusted Life Years) - Communicable, maternal, neonatal, and nutritional diseases - Sex: Both - Age: Age-standardized (Rate)`)
 
 # Generate a table using kable from the knitr package
 kable(cmnn_pivoted_data, format = "html", caption = "DALY Burden Over Time for Switzerland, Canada, and South Africa")
