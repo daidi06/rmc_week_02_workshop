@@ -37,7 +37,5 @@ data1 %>%
 
 ## Summary of Overall Disease Burden Findings
 
-Provide a brief analysis based on the data presented in the table and chart. Highlight any significant findings or patterns. About 3 sentences.
-
 DALY for Canada and Switzerland are quite the same but South Affrica make a significant difference. In 2005, there was a pick 
 
