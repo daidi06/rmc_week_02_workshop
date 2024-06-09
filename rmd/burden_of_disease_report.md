@@ -463,7 +463,7 @@ Switzerland
 
 ## Plot Showing Trends in CMNN Burden Over Time
 
-![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 ## Summary of CMNN Burden Findings
 
@@ -925,7 +925,7 @@ Switzerland
 
 ## Plot Showing Trends in NCD Burden Over Time
 
-![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 ## Summary of NCD Burden Findings
 
@@ -975,7 +975,7 @@ then.
 
 ## Plot Showing Trends in Overall Disease Burden Over Time
 
-![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 
 ## Summary of Overall Disease Burden Findings
 
