@@ -475,6 +475,29 @@ nutritional diseases.In 2005 there’s a notable spikes in South Africa
 highlight periods of health crises or gaps in disease control and
 prevention, in this case HIV/AIDs).
 
+# Challenge
+
+## Table of Estimates the *cumulative* DALY burden for CMNN Burden Over Time
+
+    ## # A tibble: 30 × 4
+    ##     Year cumulative_Canada `cumulative_South Africa` cumulative_Switzerland
+    ##    <dbl>             <dbl>                     <dbl>                  <dbl>
+    ##  1  1990             1628.                    21012.                  1500.
+    ##  2  1991             3239.                    41658.                  2955.
+    ##  3  1992             4852.                    62619.                  4373.
+    ##  4  1993             6498.                    83353.                  5729.
+    ##  5  1994             8155.                   105041.                  7033.
+    ##  6  1995             9844.                   128024.                  8592.
+    ##  7  1996            11450.                   153105.                 10057.
+    ##  8  1997            12960.                   181500.                 11429.
+    ##  9  1998            14420.                   213579.                 12743.
+    ## 10  1999            15850.                   249147.                 14029.
+    ## # ℹ 20 more rows
+
+## Plot Showing Trends in the *cumulative* DALY burden for CMNN Burden Over Time
+
+![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+
 # Non-Communicable Disease Burden (NCD)
 
 ## Table of Estimates for NCD Burden Over Time
@@ -925,7 +948,7 @@ Switzerland
 
 ## Plot Showing Trends in NCD Burden Over Time
 
-![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
 
 ## Summary of NCD Burden Findings
 
@@ -975,7 +998,7 @@ then.
 
 ## Plot Showing Trends in Overall Disease Burden Over Time
 
-![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+![](burden_of_disease_report_files/figure-gfm/unnamed-chunk-28-1.png)<!-- -->
 
 ## Summary of Overall Disease Burden Findings
 
