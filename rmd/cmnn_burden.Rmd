@@ -9,6 +9,7 @@ data_cmnn <- read_csv(here("data", "burden-of-disease-cmnn.csv"))
 ```
 
 ## Table of Estimates for CMNN Burden Over Time
+
 ```{r, echo = FALSE}
 # Here render a table for the DALY burden over time for the three countries 
 # You should pivot the data to show each country in a separate column.
@@ -48,7 +49,6 @@ ggplot(cmnn_long_data, aes(x = Year, y = DALYs, color = Entity)) +
 
 ```
 
-
 ## Summary of CMNN Burden Findings
-There is a noticeable difference in the trend lines between the countries. For instance, South Africa shows a higher and  more volatile DALY burden over the years compared to Switzerland and Canada, indicating a greater impact of communicable, maternal, neonatal, and nutritional diseases.In 2005 there's a notable spikes in South Africa highlight periods of health crises or gaps in disease control and prevention, in this case HIV/AIDs).
 
+There is a noticeable difference in the trend lines between the countries. For instance, South Africa shows a higher and more volatile DALY burden over the years compared to Switzerland and Canada, indicating a greater impact of communicable, maternal, neonatal, and nutritional diseases.In 2005 there's a notable spikes in South Africa highlight periods of health crises or gaps in disease control and prevention, in this case HIV/AIDs).
