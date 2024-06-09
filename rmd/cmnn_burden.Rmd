@@ -52,3 +52,37 @@ ggplot(cmnn_long_data, aes(x = Year, y = DALYs, color = Entity)) +
 ## Summary of CMNN Burden Findings
 
 There is a noticeable difference in the trend lines between the countries. For instance, South Africa shows a higher and more volatile DALY burden over the years compared to Switzerland and Canada, indicating a greater impact of communicable, maternal, neonatal, and nutritional diseases.In 2005 there's a notable spikes in South Africa highlight periods of health crises or gaps in disease control and prevention, in this case HIV/AIDs).
+
+# Challenge
+
+## Table of Estimates the *cumulative* DALY burden for CMNN Burden Over Time
+
+```{r, echo = FALSE}
+cmnn_pivoted_data_cum <- cmnn_pivoted_data %>% 
+  mutate(across(Canada:Switzerland, cumsum, .names = "cumulative_{col}")) %>% 
+  select(Year, contains("cumulative"))
+
+cmnn_pivoted_data_cum
+```
+
+## Plot Showing Trends in the *cumulative* DALY burden for CMNN Burden Over Time
+
+```{r, echo = FALSE}
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# Convert the wide format back to long format for ggplot
+cmnn_long_data_cum <-cmnn_pivoted_data_cum %>%
+  pivot_longer(cols = -c("Year"),
+               names_to = "Entity",
+               values_to = "DALYs")
+# Create a line plot with ggplot2
+ggplot(cmnn_long_data_cum, aes(x = Year, y = DALYs, color = Entity)) +
+  geom_line() + 
+  scale_x_continuous(breaks = seq(min(cmnn_long_data_cum$Year), max(cmnn_long_data_cum$Year), by = 5)) +
+  labs(title = "Trend of DALY Burden Over Time",
+       x = "Year",
+       y = "DALYs",
+       color = "Entity") +
+  theme_minimal() +
+  scale_color_manual(values = c("cumulative_Switzerland" = "blue", "cumulative_Canada" = "red", "cumulative_South Africa" = "green"))
+
+```
