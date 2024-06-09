@@ -1,6 +1,6 @@
 # Non-Communicable Disease Burden (NCD)
 
-```{r}
+```{r, echo = FALSE,include = FALSE}
 # Load necessary packages
 pacman::p_load(tidyverse, knitr, here, kable)
 
@@ -12,12 +12,12 @@ view(data_ncd)
 
 ## Table of Estimates for NCD Burden Over Time
 
-```{r}
+```{r, echo = FALSE}
 # Here render a table for the DALY burden over time for the three countries 
 # You should pivot the data to show each country in a separate column.
 tableCAN_SA_CH<-data_ncd %>% 
   filter(Entity%in%c("Canada", "South Africa", "Switzerland")) %>% 
-  pivot_wider(names_from="Entity", "Year",
+  pivot_wider(names_from=Entity, id_cols = Year,
               values_from="DALYs (Disability-Adjusted Life Years) - Non-communicable diseases - Sex: Both - Age: Age-standardized (Rate)")
 
   # Use kable() from the knitr package to render the table.
@@ -26,7 +26,7 @@ kable(tableCAN_SA_CH, format="html", caption="DALYs per Year for Canada, South A
 
 ## Plot Showing Trends in NCD Burden Over Time 
 
-```{r}
+```{r, echo = FALSE}
 # Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
 dataCAN_SA_CH<-tableCAN_SA_CH %>% 
   pivot_longer(cols=2:4, names_to="Country", values_to="DALY")
@@ -34,7 +34,7 @@ dataCAN_SA_CH<-tableCAN_SA_CH %>%
 #plotCAN_SA_CA <- 
   ggplot(dataCAN_SA_CH,
         aes(x=Year, y=DALY, color=Country))+
-  geom_line(size=1)+
+  geom_line(linewidth=1)+
     labs(title = "Trend of DALYs per year attributable to non-communicable diseases",
          subtitle ="Time range 1990-2019",
          y="DALYs (Age-standardized)")+
